@@ -1,0 +1,43 @@
+info:
+  app:
+    name: catalog-search-within-service-rest
+    description: IIIF Search whitin in the National Library of Norway catalog
+
+spring:
+  application:
+    name: catalog-search-within-service-rest
+
+endpoints:
+  restart:
+    enabled: true
+  refresh:
+    enabled: true
+
+server:
+  port: 8107
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+ribbon:
+  ReadTimeout: 5000
+
+zipkin:
+    collector-hostname: localhost
+---
+spring:
+    profiles: docker
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+      
+zipkin:
+    collector-hostname: zipkinCollector
