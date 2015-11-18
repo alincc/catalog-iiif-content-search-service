@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>no.nb.microservices.catalogsearchwithin</groupId>
-    <artifactId>catalog-search-within-service</artifactId>
+    <artifactId>catalog-iiif-content-search-service</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>IIIF search within</description>
@@ -23,9 +23,9 @@
     </properties>
 
     <modules>
-        <module>catalog-search-within-service-model</module>
-        <module>catalog-search-within-service-rest</module>
-        <module>catalog-search-within-service-it</module>
+        <module>catalog-iiif-content-search-service-model</module>
+        <module>catalog-iiif-content-search-service-rest</module>
+        <module>catalog-iiif-content-search-service-it</module>
     </modules>
 
     <dependencyManagement>

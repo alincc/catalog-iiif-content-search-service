@@ -11,8 +11,8 @@
     <artifactId>catalog-iiif-content-search-service-rest</artifactId>
     <packaging>jar</packaging>
 
-    <name>catalog-search-within-service-rest</name>
-    <description>IIIF search within in the National Library of Norway catalog</description>
+    <name>catalog-iiif-content-search-service-rest</name>
+    <description>IIIF content search in the National Library of Norway catalog</description>
 
 
     <properties>
