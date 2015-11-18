@@ -1,4 +1,4 @@
-package no.nb.microservices.catalogsearchwithin.rest;
+package no.nb.microservices.catalogcontentsearch.rest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

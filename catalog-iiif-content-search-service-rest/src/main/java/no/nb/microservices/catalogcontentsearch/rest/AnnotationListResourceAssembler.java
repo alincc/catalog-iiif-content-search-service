@@ -1,6 +1,8 @@
-package no.nb.microservices.catalogsearchwithin.rest;
+package no.nb.microservices.catalogcontentsearch.rest;
 
+import no.nb.microservices.catalogcontentsearch.rest.model.AnnotationList;
 import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
+
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 
 import org.springframework.hateoas.Link;

@@ -1,4 +1,6 @@
-package no.nb.microservices.catalogsearchwithin.rest;
+package no.nb.microservices.catalogcontentsearch.rest;
+
+import no.nb.microservices.catalogcontentsearch.rest.model.AnnotationList;
 
 public class AnnotationListBuilder {
     private String id;

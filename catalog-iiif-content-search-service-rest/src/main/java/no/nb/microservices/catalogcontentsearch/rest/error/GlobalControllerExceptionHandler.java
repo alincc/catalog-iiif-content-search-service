@@ -1,4 +1,4 @@
-package no.nb.microservices.catalogsearchwithin.rest.error;
+package no.nb.microservices.catalogcontentsearch.rest.error;
 
 import java.io.IOException;
 

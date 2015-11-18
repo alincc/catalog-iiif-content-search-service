@@ -1,4 +1,4 @@
-package no.nb.microservices.catalogsearchwithin.config;
+package no.nb.microservices.catalogcontentsearch.config;
 
 import no.nb.commons.web.sso.feign.SsoFeignInterceptor;
 import no.nb.commons.web.xforwarded.feign.XForwardedParamsFeignInterceptor;

@@ -1,4 +1,4 @@
-package no.nb.microservices.catalogsearchwithin.core.index.repository;
+package no.nb.microservices.catalogcontentsearch.core.index.repository;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;

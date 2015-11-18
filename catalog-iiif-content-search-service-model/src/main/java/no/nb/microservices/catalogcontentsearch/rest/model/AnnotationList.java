@@ -1,4 +1,4 @@
-package no.nb.microservices.catalogsearchwithin.rest;
+package no.nb.microservices.catalogcontentsearch.rest.model;
 
 import java.util.List;
 

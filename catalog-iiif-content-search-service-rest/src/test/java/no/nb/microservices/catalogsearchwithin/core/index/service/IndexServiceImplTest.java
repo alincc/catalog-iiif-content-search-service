@@ -9,7 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import no.nb.microservices.catalogsearchwithin.core.index.repository.IndexRepository;
+import no.nb.microservices.catalogcontentsearch.core.index.repository.IndexRepository;
+import no.nb.microservices.catalogcontentsearch.core.index.service.IndexServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class IndexServiceImplTest {

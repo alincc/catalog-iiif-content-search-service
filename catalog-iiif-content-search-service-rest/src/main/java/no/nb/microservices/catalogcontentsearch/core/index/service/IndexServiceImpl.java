@@ -1,10 +1,10 @@
-package no.nb.microservices.catalogsearchwithin.core.index.service;
+package no.nb.microservices.catalogcontentsearch.core.index.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import no.nb.microservices.catalogcontentsearch.core.index.repository.IndexRepository;
 import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
-import no.nb.microservices.catalogsearchwithin.core.index.repository.IndexRepository;
 
 @Service
 public class IndexServiceImpl implements IndexService {

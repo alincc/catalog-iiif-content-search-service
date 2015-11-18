@@ -18,8 +18,10 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import no.nb.microservices.catalogcontentsearch.core.index.service.IndexService;
+import no.nb.microservices.catalogcontentsearch.rest.SearchController;
+import no.nb.microservices.catalogcontentsearch.rest.model.AnnotationList;
 import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
-import no.nb.microservices.catalogsearchwithin.core.index.service.IndexService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SearchControllerTest {

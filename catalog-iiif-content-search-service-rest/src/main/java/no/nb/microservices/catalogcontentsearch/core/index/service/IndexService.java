@@ -1,4 +1,4 @@
-package no.nb.microservices.catalogsearchwithin.core.index.service;
+package no.nb.microservices.catalogcontentsearch.core.index.service;
 
 import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
 
