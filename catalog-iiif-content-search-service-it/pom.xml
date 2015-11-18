@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>catalog-search-within-service-rest</artifactId>
+            <artifactId>catalog-iiif-content-search-service-rest</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- Testing -->
