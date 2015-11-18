@@ -5,7 +5,7 @@ info:
 
 spring:
   application:
-    name: catalog-search-within-service-rest
+    name: catalog-iiif-content-search
 
 endpoints:
   restart:

@@ -2,3 +2,5 @@
 /.springBeans
 /data/
 /target/
+/.classpath
+/.project
