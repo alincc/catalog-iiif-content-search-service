@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "id", "type", "motivation", "resource" })
+@JsonPropertyOrder({ "id", "type", "motivation", "resource", "on" })
 public class Annotation {
     @JsonProperty("@id")
     private String id;
@@ -15,6 +15,7 @@ public class Annotation {
     private String type;
     private String motivation;
     private Resource resource;
+    private String on;
 
     public String getId() {
         return id;
@@ -46,6 +47,14 @@ public class Annotation {
 
     public void setResource(Resource resource) {
         this.resource = resource;
+    }
+
+    public String getOn() {
+        return on;
+    }
+
+    public void setOn(String on) {
+        this.on = on;
     }
 
 }
