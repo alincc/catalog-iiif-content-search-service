@@ -17,6 +17,11 @@ public class Annotation {
     private Resource resource;
     private String on;
 
+    public Annotation() {
+        this.type = "oa:Annotation";
+        this.motivation = "sc:painting";
+    }
+    
     public String getId() {
         return id;
     }

@@ -6,24 +6,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import no.nb.microservices.catalogcontentsearch.core.index.service.IndexService;
+import no.nb.microservices.catalogcontentsearch.core.search.service.ContentSearchResult;
+import no.nb.microservices.catalogcontentsearch.core.search.service.ContentSearchService;
 import no.nb.microservices.catalogcontentsearch.rest.model.AnnotationList;
-import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
 
 @RestController
 @RequestMapping(value = "/catalog/contentsearch")
 public class SearchController {
-    private IndexService indexService;
+    private ContentSearchService contentSearchService;
     
     @Autowired
-    public SearchController(IndexService indexService) {
+    public SearchController(ContentSearchService contentSearchService) {
         super();
-        this.indexService = indexService;
+        this.contentSearchService = contentSearchService;
     }
     
     @RequestMapping(value = "/{id}/search")
     public AnnotationList search(@PathVariable String id, @RequestParam String q) {
-        SearchWithinResource result = indexService.searchWithin(id, q);
+        ContentSearchResult result = contentSearchService.search(id, q);
         return new AnnotationListResourceAssembler().toResource(id, q, result);
     }
 

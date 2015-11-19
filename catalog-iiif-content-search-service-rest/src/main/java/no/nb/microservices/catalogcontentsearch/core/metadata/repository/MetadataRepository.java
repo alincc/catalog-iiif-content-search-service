@@ -1,19 +1,19 @@
-package no.nb.microservices.catalogcontentsearch.core.index.repository;
+package no.nb.microservices.catalogcontentsearch.core.metadata.repository;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
+import no.nb.microservices.catalogmetadata.model.struct.StructMap;
 
-@FeignClient("catalog-search-index-service")
-public interface IndexRepository {
-    
-    @RequestMapping(method = RequestMethod.GET, value = "/{id}/search")
-    SearchWithinResource contentSearch(@PathVariable("id") String id,
-            @RequestParam("q") String q, 
+@FeignClient("catalog-metadata-service")
+public interface MetadataRepository {
+
+    @RequestMapping(method = RequestMethod.GET, value = "/catalog/metadata/{id}/struct", produces = MediaType.APPLICATION_XML_VALUE)
+    StructMap getStructById(@PathVariable("id") String id, 
             @RequestParam("X-Forwarded-Host") String xHost, 
             @RequestParam("X-Forwarded-Port") String xPort, 
             @RequestParam("X-Original-IP-Fra-Frontend") String xRealIp, 

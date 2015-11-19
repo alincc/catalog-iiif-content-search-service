@@ -13,6 +13,16 @@ public class Resource {
     private String type;
     private String chars;
 
+    public Resource() {
+        super();
+        this.type = "cnt:ContentAsText";
+    }
+    
+    public Resource(String chars) {
+        this();
+        this.chars = chars;
+    }
+
     public String getType() {
         return type;
     }

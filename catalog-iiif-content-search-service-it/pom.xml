@@ -23,6 +23,11 @@
         </dependency>
         <!-- Testing -->
         <dependency>
+            <groupId>no.nb.microservices</groupId>
+            <artifactId>catalog-metadata-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
