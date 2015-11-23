@@ -81,8 +81,8 @@ public class AnnotationListBuilder {
 
                 float x = (float) wordRectangle.getLeft().getValue();
                 float y = (float) wordRectangle.getTop().getValue();
-                float width = (float) wordRectangle.getWidth().getValue();
-                float height = (float) wordRectangle.getHeight().getValue();
+                float width = (float) wordRectangle.getWidth().getValue()* factorX;
+                float height = (float) wordRectangle.getHeight().getValue()* factorY;
 
                 int t = Math.round(y * factorY);
                 int l = Math.round(x * factorX);
