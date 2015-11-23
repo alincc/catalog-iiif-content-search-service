@@ -1,11 +1,9 @@
 package no.nb.microservices.catalogsearchwithin.core.index.service;
 
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-
-import org.apache.htrace.Span;
-
-import static org.mockito.Matchers.*;
 
 import org.junit.Before;
 import org.junit.Test;
