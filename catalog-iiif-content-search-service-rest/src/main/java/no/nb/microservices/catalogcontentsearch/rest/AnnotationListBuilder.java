@@ -54,49 +54,47 @@ public class AnnotationListBuilder {
     public AnnotationList build() {
         AnnotationList annotationList = new AnnotationList();
         try {
-        Link selfRel = linkTo(methodOn(SearchController.class).search(id, q)).withSelfRel();
-        annotationList.setId(selfRel.getHref());
-        
-        StringBuilder metadataBuilder = new StringBuilder();
-        for (String metadata : freetextMetadatas) {
-            metadataBuilder.append(metadata + " ");
-        }
-
-        Document metadataDocument = Document.buildPageDocument(metadataBuilder.toString().trim());
-        Map<String, String[]> pageNameMap = buildPageNameMapping();
-        int i = 0;
-        for (String fragment : fragments) {
-            Word word = Word.parse(fragment, 0);
-            for (Rectangle wordRectangle : word.getPositionMetadata()) {
-                String pageName = metadataDocument.getPageNameFromPageID(wordRectangle.getPageId().getValue());
-                Page page = metadataDocument.getPageFromPageID(wordRectangle.getPageId().getValue());
-                // Array with [0]=order, [1]=width, [2]=height
-                String[] pageData = pageNameMap.get(pageName);
-
-                float resWidth = Float.parseFloat(pageData[1]);
-                float resHeight = Float.parseFloat(pageData[2]);
-
-                float factorX = resWidth / (float) page.getRectangle().getWidth().getValue();
-                float factorY = resHeight / (float) page.getRectangle().getHeight().getValue();
-
-                float x = (float) wordRectangle.getLeft().getValue();
-                float y = (float) wordRectangle.getTop().getValue();
-                float width = (float) wordRectangle.getWidth().getValue()* factorX;
-                float height = (float) wordRectangle.getHeight().getValue()* factorY;
-
-                int t = Math.round(y * factorY);
-                int l = Math.round(x * factorX);
-                if (i > 0) {
-                    // @Todo line break?
-                }
-                Annotation annotation = new Annotation();
-                annotation.setId(id);
-                no.nb.microservices.catalogcontentsearch.rest.model.Resource resource = new no.nb.microservices.catalogcontentsearch.rest.model.Resource(q);
-                annotation.setResource(resource);
-                annotation.setOn(createOnLink(id, pageName, l, t, (int)width, (int)height).getHref());
-                annotationList.addResource(annotation);
+            Link selfRel = linkTo(methodOn(SearchController.class).search(id, q)).withSelfRel();
+            annotationList.setId(selfRel.getHref());
+            
+            StringBuilder metadataBuilder = new StringBuilder();
+            for (String metadata : freetextMetadatas) {
+                metadataBuilder.append(metadata + " ");
             }
-        }
+    
+            Document metadataDocument = Document.buildPageDocument(metadataBuilder.toString().trim());
+            Map<String, String[]> pageNameMap = buildPageNameMapping();
+            int i = 0;
+            for (String fragment : fragments) {
+                Word word = Word.parse(fragment, 0);
+                for (Rectangle wordRectangle : word.getPositionMetadata()) {
+                    String pageName = metadataDocument.getPageNameFromPageID(wordRectangle.getPageId().getValue());
+                    Page page = metadataDocument.getPageFromPageID(wordRectangle.getPageId().getValue());
+                    // Array with [0]=order, [1]=width, [2]=height
+                    String[] pageData = pageNameMap.get(pageName);
+    
+                    float resWidth = Float.parseFloat(pageData[1]);
+                    float resHeight = Float.parseFloat(pageData[2]);
+    
+                    float factorX = resWidth / (float) page.getRectangle().getWidth().getValue();
+                    float factorY = resHeight / (float) page.getRectangle().getHeight().getValue();
+    
+                    float x = (float) wordRectangle.getLeft().getValue();
+                    float y = (float) wordRectangle.getTop().getValue();
+                    float width = (float) wordRectangle.getWidth().getValue()* factorX;
+                    float height = (float) wordRectangle.getHeight().getValue()* factorY;
+    
+                    int t = Math.round(y * factorY);
+                    int l = Math.round(x * factorX);
+
+                    Annotation annotation = new Annotation();
+                    annotation.setId(id);
+                    no.nb.microservices.catalogcontentsearch.rest.model.Resource resource = new no.nb.microservices.catalogcontentsearch.rest.model.Resource(q);
+                    annotation.setResource(resource);
+                    annotation.setOn(createOnLink(id, pageName, l, t, (int)width, (int)height).getHref());
+                    annotationList.addResource(annotation);
+                }
+            }
         } catch(Exception ex) {
             ex.printStackTrace();
         }
