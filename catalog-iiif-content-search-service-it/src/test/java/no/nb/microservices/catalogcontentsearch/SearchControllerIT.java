@@ -39,7 +39,6 @@ import no.nb.microservices.catalogmetadata.test.struct.TestStructMap;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {Application.class, RibbonClientConfiguration.class})
 @WebIntegrationTest("server.port:0")
-@Ignore("TODO")
 public class SearchControllerIT {
 
     @Value("${local.server.port}")
@@ -58,14 +57,14 @@ public class SearchControllerIT {
         server = new MockWebServer();
         final Dispatcher dispatcher = new Dispatcher() {
             String searchid1Mock = IOUtils.toString(this.getClass().getResourceAsStream("id1.json"));
-
+            String structMap = TestStructMap.structMapToString(TestStructMap.aDefaultStructMap().build());
+            
             @Override
             public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
                 if (request.getPath().startsWith("/id1/search?q=test")) {
                     return new MockResponse().setBody(searchid1Mock).setHeader("Content-Type", "application/json; charset=utf-8");
                 } else if (request.getPath().startsWith("/catalog/metadata/id1/struct")) {
-                    System.out.println(TestStructMap.structMapToString(TestStructMap.aDefaultStructMap().build()));
-                    return new MockResponse().setBody(TestStructMap.structMapToString(TestStructMap.aDefaultStructMap().build())).setHeader("Content-Type", "application/xml; charset=utf-8");
+                    return new MockResponse().setBody(structMap).setHeader("Content-Type", "application/xml; charset=utf-8");
                 }
                 return new MockResponse().setResponseCode(404);
             }
