@@ -86,15 +86,9 @@ public class AnnotationListBuilder {
 
                 int t = Math.round(y * factorY);
                 int l = Math.round(x * factorX);
-                int r = Math.round((x + width) * factorX);
-                int b = Math.round((y + height) * factorY);
                 if (i > 0) {
                     // @Todo line break?
                 }
-                System.out.println("t="+t);
-                System.out.println("l="+l);
-                System.out.println("r="+r);
-                System.out.println("b="+b);
                 Annotation annotation = new Annotation();
                 annotation.setId(id);
                 no.nb.microservices.catalogcontentsearch.rest.model.Resource resource = new no.nb.microservices.catalogcontentsearch.rest.model.Resource(q);
