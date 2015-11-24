@@ -63,7 +63,7 @@ public class SearchControllerIT {
             public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
                 if (request.getPath().startsWith("/id1/search?q=test")) {
                     return new MockResponse().setBody(searchid1Mock).setHeader("Content-Type", "application/json; charset=utf-8");
-                } else if (request.getPath().startsWith("/catalog/metadata/id1/struct")) {
+                } else if (request.getPath().startsWith("/v1/catalog/metadata/id1/struct")) {
                     return new MockResponse().setBody(structMap).setHeader("Content-Type", "application/xml; charset=utf-8");
                 }
                 return new MockResponse().setResponseCode(404);
@@ -87,7 +87,7 @@ public class SearchControllerIT {
         HttpHeaders headers = createDefaultHeaders();
         
         ResponseEntity<AnnotationList> response = new TestRestTemplate().exchange(
-                "http://localhost:" + port + "/catalog/contentsearch/id1/search?q=test", HttpMethod.GET,
+                "http://localhost:" + port + "/v1/catalog/contentsearch/id1/search?q=test", HttpMethod.GET,
                 new HttpEntity<Void>(headers), AnnotationList.class);
         AnnotationList annotationList = response.getBody();
         

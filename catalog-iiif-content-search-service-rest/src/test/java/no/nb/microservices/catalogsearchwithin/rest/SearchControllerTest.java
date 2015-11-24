@@ -38,7 +38,7 @@ public class SearchControllerTest {
     
     @Before
     public void init() {
-        MockHttpServletRequest request = new MockHttpServletRequest("GET", "/catalog/contentsearch/id1/search?q=searchwithin");
+        MockHttpServletRequest request = new MockHttpServletRequest("GET", "/v1/catalog/contentsearch/id1/search?q=searchwithin");
         ServletRequestAttributes attributes = new ServletRequestAttributes(request);
 
         RequestContextHolder.setRequestAttributes(attributes);
@@ -74,7 +74,7 @@ public class SearchControllerTest {
     private AnnotationList createExpectedAnnotationList() {
         AnnotationList expected = new AnnotationList();
         expected.setContext("http://iiif.io/api/search/0/context.json");
-        expected.setId("http://localhost/catalog/contentsearch/id1/search?q=searchwithin");
+        expected.setId("http://localhost/v1/catalog/contentsearch/id1/search?q=searchwithin");
         expected.setType("sc:AnnotationList");
         return expected;
     }

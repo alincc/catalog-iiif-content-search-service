@@ -11,7 +11,7 @@ import no.nb.microservices.catalogcontentsearch.core.search.service.ContentSearc
 import no.nb.microservices.catalogcontentsearch.rest.model.AnnotationList;
 
 @RestController
-@RequestMapping(value = "/catalog/contentsearch")
+@RequestMapping(value = "/v1/catalog/contentsearch")
 public class SearchController {
     private ContentSearchService contentSearchService;
     
