@@ -38,11 +38,6 @@
             <groupId>no.nb.microservices</groupId>
             <artifactId>catalog-metadata-model</artifactId>
         </dependency>
-        <dependency>
-            <groupId>no.nb.microservices</groupId>
-            <artifactId>catalog-metadata-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     
         <dependency>
             <groupId>no.nb.microservices.catalogsearchindex</groupId>
