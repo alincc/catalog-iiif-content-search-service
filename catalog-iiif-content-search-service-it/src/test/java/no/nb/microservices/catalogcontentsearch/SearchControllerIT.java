@@ -61,7 +61,7 @@ public class SearchControllerIT {
             
             @Override
             public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
-                if (request.getPath().startsWith("/id1/search?q=test")) {
+                if (request.getPath().startsWith("/v1/id1/search?q=test")) {
                     return new MockResponse().setBody(searchid1Mock).setHeader("Content-Type", "application/json; charset=utf-8");
                 } else if (request.getPath().startsWith("/v1/catalog/metadata/id1/struct")) {
                     return new MockResponse().setBody(structMap).setHeader("Content-Type", "application/xml; charset=utf-8");
