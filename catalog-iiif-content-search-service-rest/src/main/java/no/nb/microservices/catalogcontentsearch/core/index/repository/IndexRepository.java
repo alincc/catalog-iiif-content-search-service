@@ -11,7 +11,7 @@ import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
 @FeignClient("catalog-search-index-service")
 public interface IndexRepository {
     
-    @RequestMapping(method = RequestMethod.GET, value = "/v1/{id}/search")
+    @RequestMapping(method = RequestMethod.GET, value = "/catalog/v1/{id}/search")
     SearchWithinResource contentSearch(@PathVariable("id") String id,
             @RequestParam("q") String q, 
             @RequestParam("X-Forwarded-Host") String xHost, 

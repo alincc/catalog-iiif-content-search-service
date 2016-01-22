@@ -1,7 +1,7 @@
 {  
    "_links":{  
       "self":{  
-         "href":"http://ronnym.nb.no:8200/v1/c3c9844de9cb027e003021b1aadeae6c/search?q=dolls"
+         "href":"http://ronnym.nb.no:8200/catalog/v1/c3c9844de9cb027e003021b1aadeae6c/search?q=dolls"
       }
    },
    "freetextMetadatas":[  
