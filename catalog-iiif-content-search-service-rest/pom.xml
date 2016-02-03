@@ -16,7 +16,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>no.nb.microservices.catalogsearch.Application</start-class>
+        <start-class>no.nb.microservices.catalogcontentsearch.Application</start-class>
         <docker.registry>registry.nb.no:5000</docker.registry>
         <docker.image.prefix>nb</docker.image.prefix>
     </properties>
