@@ -14,7 +14,7 @@ public class AnnotationListResourceAssembler {
                 .withQ(q)
                 .withStruct(result.getStruct())
                 .withFragments(contentSearchResult.getFragments())
-                .withFreetextMedatas(contentSearchResult.getFreetextMetadatas())
+                .withFreetextMetadatas(contentSearchResult.getFreetextMetadatas())
                 .build();
     }
 
