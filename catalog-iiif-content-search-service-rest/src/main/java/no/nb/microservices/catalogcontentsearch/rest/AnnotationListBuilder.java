@@ -80,7 +80,7 @@ public class AnnotationListBuilder {
                     Page page = metadataDocument.getPageFromPageID(wordRectangle.getPageId().getValue());
                     // Array with [0]=order, [1]=width, [2]=height
                     String[] pageData = pageNameMap.get(pageName);
-
+                    String pageUrn = pageData[4];
                     float resWidth = Float.parseFloat(pageData[1]);
                     float resHeight = Float.parseFloat(pageData[2]);
 
@@ -99,7 +99,7 @@ public class AnnotationListBuilder {
                     annotation.setId(id);
                     no.nb.microservices.catalogcontentsearch.rest.model.Resource resource = new no.nb.microservices.catalogcontentsearch.rest.model.Resource(q);
                     annotation.setResource(resource);
-                    annotation.setOn(createOnLink(id, pageName, l, t, (int) width, (int) height).getHref());
+                    annotation.setOn(createOnLink(id, pageUrn, l, t, (int) width, (int) height).getHref());
                     annotationList.addResource(annotation);
                 }
             });
@@ -121,7 +121,7 @@ public class AnnotationListBuilder {
             if (div.getOrderLabel() != null && !div.getOrderLabel().isEmpty()) {
                    orderlabel = div.getOrderLabel();
             }            
-            orderMap.put(div.getId(), new String[]{div.getOrder(), ""+resource.getWidth(), ""+resource.getHeight(), orderlabel});
+            orderMap.put(div.getId(), new String[]{div.getOrder(), ""+resource.getWidth(), ""+resource.getHeight(), orderlabel, resource.getHref()});
         }
         return orderMap;
     }
