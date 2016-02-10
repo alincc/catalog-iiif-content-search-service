@@ -1,24 +1,24 @@
 package no.nb.microservices.catalogcontentsearch.core.search.service;
 
 import no.nb.microservices.catalogmetadata.model.struct.StructMap;
-import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
+import no.nb.microservices.catalogsearchindex.searchwithin.ContentSearchResource;
 
 public class ContentSearchResult {
     private final StructMap struct;
-    private final SearchWithinResource searchWithinResource;
+    private final ContentSearchResource contentSearchResource;
     
     public ContentSearchResult(StructMap struct,
-            SearchWithinResource searchWithinResource) {
+            ContentSearchResource contentSearchResource) {
         this.struct = struct;
-        this.searchWithinResource = searchWithinResource;
+        this.contentSearchResource = contentSearchResource;
     }
 
     public StructMap getStruct() {
         return struct;
     }
 
-    public SearchWithinResource getSearchWithinResource() {
-        return searchWithinResource;
+    public ContentSearchResource getContentSearchResource() {
+        return contentSearchResource;
     }
 
 }

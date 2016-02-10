@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import no.nb.microservices.catalogcontentsearch.core.index.repository.IndexRepository;
 import no.nb.microservices.catalogcontentsearch.core.search.service.SecurityInfo;
 import no.nb.microservices.catalogcontentsearch.core.search.service.TracableId;
-import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
+import no.nb.microservices.catalogsearchindex.searchwithin.ContentSearchResource;
 
 @Service
 public class IndexServiceImpl implements IndexService {
@@ -24,17 +24,17 @@ public class IndexServiceImpl implements IndexService {
     }
 
     @Override
-    public Future<SearchWithinResource> contentSearch(TracableId tracableId,
+    public Future<ContentSearchResource> contentSearch(TracableId tracableId,
             String q) {
         Trace.continueSpan(tracableId.getSpan());
         SecurityInfo securityInfo = tracableId.getSecurityInfo();
-        SearchWithinResource contentSearchResult = indexRepository.contentSearch(tracableId.getId(), 
+        ContentSearchResource contentSearchResult = indexRepository.contentSearch(tracableId.getId(), 
                 q,
                 securityInfo.getxHost(),
                 securityInfo.getxPort(),
                 securityInfo.getxRealIp(),
                 securityInfo.getSsoToken());
-        return new AsyncResult<SearchWithinResource>(contentSearchResult);
+        return new AsyncResult<ContentSearchResource>(contentSearchResult);
     }
     
 

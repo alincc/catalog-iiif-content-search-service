@@ -15,7 +15,7 @@ import no.nb.commons.web.xforwarded.feign.XForwardedFeignInterceptor;
 import no.nb.microservices.catalogcontentsearch.core.index.service.IndexService;
 import no.nb.microservices.catalogcontentsearch.core.metadata.service.MetadataService;
 import no.nb.microservices.catalogmetadata.model.struct.StructMap;
-import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
+import no.nb.microservices.catalogsearchindex.searchwithin.ContentSearchResource;
 
 @Service
 public class ContentSearchServiceImpl implements ContentSearchService {
@@ -37,7 +37,7 @@ public class ContentSearchServiceImpl implements ContentSearchService {
         TracableId tracableId = new TracableId(Trace.currentSpan(), id, getSecurityInfo());
         
         Future<StructMap> struct = metadataService.getStructById(tracableId);
-        Future<SearchWithinResource> contentSearchResult = indexService.contentSearch(tracableId, q);
+        Future<ContentSearchResource> contentSearchResult = indexService.contentSearch(tracableId, q);
         
         try {
             return new ContentSearchResult(struct.get(), contentSearchResult.get());

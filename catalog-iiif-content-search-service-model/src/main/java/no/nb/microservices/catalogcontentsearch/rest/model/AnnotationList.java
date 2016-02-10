@@ -1,17 +1,12 @@
 package no.nb.microservices.catalogcontentsearch.rest.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.fasterxml.jackson.annotation.*;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.util.ArrayList;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,6 +19,7 @@ public class AnnotationList {
     @JsonProperty("@type")
     private String type;
     private List<Annotation> resources;
+    private List<Hit> hits;
 
     public AnnotationList() {
         super();
@@ -62,7 +58,15 @@ public class AnnotationList {
     public void setResources(List<Annotation> resources) {
         this.resources = resources;
     }
-    
+
+    public List<Hit> getHits() {
+        return hits;
+    }
+
+    public void setHits(List<Hit> hits) {
+        this.hits = hits;
+    }
+
     @JsonIgnore
     public void addResource(Annotation annotation) {
         if (resources == null) {

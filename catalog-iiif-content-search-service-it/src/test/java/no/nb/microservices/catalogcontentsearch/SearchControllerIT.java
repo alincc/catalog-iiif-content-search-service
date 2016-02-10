@@ -1,5 +1,7 @@
 package no.nb.microservices.catalogcontentsearch;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -7,7 +9,6 @@ import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +62,7 @@ public class SearchControllerIT {
             
             @Override
             public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
-                if (request.getPath().startsWith("/catalog/v1/id1/search?q=test")) {
+                if (request.getPath().startsWith("/catalog/v1/id1/search?q=Oslo")) {
                     return new MockResponse().setBody(searchid1Mock).setHeader("Content-Type", "application/json; charset=utf-8");
                 } else if (request.getPath().startsWith("/catalog/v1/metadata/id1/struct")) {
                     return new MockResponse().setBody(structMap).setHeader("Content-Type", "application/xml; charset=utf-8");
@@ -87,7 +88,7 @@ public class SearchControllerIT {
         HttpHeaders headers = createDefaultHeaders();
         
         ResponseEntity<AnnotationList> response = new TestRestTemplate().exchange(
-                "http://localhost:" + port + "/catalog/v1/contentsearch/id1/search?q=test", HttpMethod.GET,
+                "http://localhost:" + port + "/catalog/v1/contentsearch/id1/search?q=Oslo", HttpMethod.GET,
                 new HttpEntity<Void>(headers), AnnotationList.class);
         AnnotationList annotationList = response.getBody();
         
@@ -95,6 +96,11 @@ public class SearchControllerIT {
         assertNotNull("AnnotationList should not be null", annotationList);
         assertEquals("Should hava a context", "http://iiif.io/api/search/0/context.json", annotationList.getContext());
         assertEquals("Should have a type", "sc:AnnotationList", annotationList.getType());
+        assertEquals("Should get 2 hits", 2, annotationList.getHits().size());
+        assertEquals("fornøjelse at byde jer velkommen til ", annotationList.getHits().get(0).getBefore());
+        assertEquals("Nye og til musicalen Guys and Dolls. ", annotationList.getHits().get(0).getAfter());
+        assertEquals("over at få tildelt. Som teaterchef på ", annotationList.getHits().get(1).getBefore());
+        assertEquals("Nye nyder man det privelegium at komme ", annotationList.getHits().get(1).getAfter());
 
     }
     

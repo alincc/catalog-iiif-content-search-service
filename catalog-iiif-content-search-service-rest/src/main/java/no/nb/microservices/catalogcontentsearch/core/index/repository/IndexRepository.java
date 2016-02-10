@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import no.nb.microservices.catalogsearchindex.searchwithin.SearchWithinResource;
+import no.nb.microservices.catalogsearchindex.searchwithin.ContentSearchResource;
 
 @FeignClient("catalog-search-index-service")
 public interface IndexRepository {
     
     @RequestMapping(method = RequestMethod.GET, value = "/catalog/v1/{id}/search")
-    SearchWithinResource contentSearch(@PathVariable("id") String id,
+    ContentSearchResource contentSearch(@PathVariable("id") String id,
             @RequestParam("q") String q, 
             @RequestParam("X-Forwarded-Host") String xHost, 
             @RequestParam("X-Forwarded-Port") String xPort, 
