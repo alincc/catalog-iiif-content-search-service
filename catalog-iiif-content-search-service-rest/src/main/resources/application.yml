@@ -4,7 +4,7 @@ info:
     description: IIIF Search whitin in the National Library of Norway catalog
 
 server:
-  port: 0
+  port: 8009
 
 zipkin:
     collector-hostname: localhost
