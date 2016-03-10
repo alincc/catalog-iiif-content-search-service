@@ -1,5 +1,6 @@
 package no.nb.microservices.catalogcontentsearch.rest;
 
+import no.nb.htrace.annotation.Traceable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ public class SearchController {
     }
     
     @RequestMapping(value = "/{id}/search")
+    @Traceable(description = "contentsearch")
     public AnnotationList search(@PathVariable String id, @RequestParam String q) {
         ContentSearchResult result = contentSearchService.search(id, q);
         return new AnnotationListResourceAssembler().toResource(id, q, result);
