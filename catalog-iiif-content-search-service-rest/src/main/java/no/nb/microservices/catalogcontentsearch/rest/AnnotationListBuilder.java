@@ -73,7 +73,6 @@ public class AnnotationListBuilder {
                 hit.setAnnotations(Arrays.asList(id));
                 hits.add(hit);
                 annotationList.setHits(hits);
-
                 Word word = Word.parse(fragment, 0);
                 for (Rectangle wordRectangle : word.getPositionMetadata()) {
                     String pageName = metadataDocument.getPageNameFromPageID(wordRectangle.getPageId().getValue());
@@ -130,6 +129,9 @@ public class AnnotationListBuilder {
         String before = "";
         String[] strings = fragment.split(" ");
         for (String string : strings) {
+            if (!string.contains("#")) {
+                continue;
+            }
             Word word = Word.parse(string, 0);
             if (word.getText().toLowerCase().replace(".", "").replace(",", "").equalsIgnoreCase(q.toLowerCase())) {
                 break;
@@ -145,6 +147,9 @@ public class AnnotationListBuilder {
         boolean isAfter = false;
         String[] strings = fragment.split(" ");
         for (String string : strings) {
+            if (!string.contains("#")) {
+                continue;
+            }
             Word word = Word.parse(string, 0);
             if (isAfter) {
                 after += word.getText() + " ";
