@@ -10,6 +10,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.security.oauth2.resource.EnableOAuth2Resource;
 
 import no.nb.htrace.annotation.EnableTracing;
+import no.nb.metrics.annotation.EnableMetrics;
 
 @SpringBootApplication
 @EnableConfigurationProperties
@@ -19,6 +20,7 @@ import no.nb.htrace.annotation.EnableTracing;
 @EnableOAuth2Resource
 @RefreshScope
 @EnableTracing
+@EnableMetrics
 public class Application {
 
     public static void main(String[] args) {

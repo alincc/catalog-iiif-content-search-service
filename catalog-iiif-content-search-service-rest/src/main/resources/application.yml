@@ -1,10 +1,20 @@
 info:
-  app:
-    name: catalog-iiif-content-search
-    description: IIIF Search whitin in the National Library of Norway catalog
+    app:
+        name: catalog-iiif-content-search
+        description: IIIF Search whitin in the National Library of Norway catalog
+    build:
+        artifact: ${project.artifactId}
+        name: ${project.name}
+        description: ${project.description}
+        version: ${project.version}
 
 server:
-  port: 8009
+    port: 8009
 
 zipkin:
     collector-hostname: localhost
+    
+monitoring:
+    hostname: localhost
+    port: 2003
+    period: 1    
