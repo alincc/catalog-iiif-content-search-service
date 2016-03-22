@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import no.nb.microservices.catalogcontentsearch.core.search.service.ContentSearchResult;
+import no.nb.microservices.catalogcontentsearch.core.search.ContentSearchResult;
 import no.nb.microservices.catalogcontentsearch.core.search.service.ContentSearchService;
 import no.nb.microservices.catalogcontentsearch.rest.model.AnnotationList;
 

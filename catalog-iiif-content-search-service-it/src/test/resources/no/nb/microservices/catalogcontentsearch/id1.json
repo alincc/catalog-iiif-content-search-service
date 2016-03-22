@@ -1,24 +1,199 @@
-{  
-   "_links":{  
-      "self":{  
-         "href":"http://ronnym.nb.no:8200/catalog/v1/c3c9844de9cb027e003021b1aadeae6c/search?q=dolls"
+{
+   "_links": {
+      "self": {
+         "href": "http://localhost:8765/catalog/v1/URN:NBN:no-nb_digibok_2014062707144/search?q=teater"
       }
    },
-   "freetextMetadatas":[  
-      "DIV1#1000fNkW",
-      "DIV2#1100fNkW",
-      "DIV3#1200fNkW",
-      "DIV4#1300fNkW",
-      "DIV5#1400fNkW"
-   ],
-   "fragments":[
-     "fornøjelse#413K5À1v0A at#314Ú5Äsn byde#31555ÀÍA jer#315Ý5ÀFA velkommen#416l5À1S0r til#317Ø5Ànr Oslo#31805¿Ês Nye#318Ú5¿YA og#319B5ÈDr til#319Ù5Àor musicalen#41a25À1w0r Guys#31bQ5¿ÓA and#31cl5À[q Dolls.#31cÞ5¿Õr",
-     "over#31có5üÄj at#310ù6Kso få#311y6Gts tildelt.#311Ë6HÝr Som#310ú6ÞÆs teaterchef#411Í6Þ1A0s på#312ý6ÜCB Oslo#313M6ÜÊt Nye#31496ÝYA nyder#314Ñ6ÝÙA man#315V6æ¿j det#31676ÝOs privelegium#416Ä6Ý1T0A at#318a6áso komme#318O6Þór"
-   ],
-   "page":{  
-      "size":10,
-      "totalElements":1,
-      "totalPages":1,
-      "number":0
-   }
+   "fragments": [
+      {
+         "text": "Teater.",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0003",
+         "position": {
+            "x": 1105,
+            "y": 703,
+            "width": 119,
+            "height": 47
+         }
+      },
+      {
+         "text": "Teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0003",
+         "position": {
+            "x": 1317,
+            "y": 1178,
+            "width": 113,
+            "height": 47
+         }
+      },
+      {
+         "text": "teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0003",
+         "position": {
+            "x": 1590,
+            "y": 1580,
+            "width": 107,
+            "height": 40
+         }
+      },
+      {
+         "text": "teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0017",
+         "position": {
+            "x": 838,
+            "y": 1222,
+            "width": 113,
+            "height": 42
+         }
+      },
+      {
+         "text": "teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0017",
+         "position": {
+            "x": 2510,
+            "y": 904,
+            "width": 118,
+            "height": 40
+         }
+      },
+      {
+         "text": "Teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0019",
+         "position": {
+            "x": 1533,
+            "y": 173,
+            "width": 100,
+            "height": 44
+         }
+      },
+      {
+         "text": "Teater/",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0019",
+         "position": {
+            "x": 2718,
+            "y": 666,
+            "width": 116,
+            "height": 51
+         }
+      },
+      {
+         "text": "(Teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0019",
+         "position": {
+            "x": 941,
+            "y": 811,
+            "width": 113,
+            "height": 51
+         }
+      },
+      {
+         "text": "Teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0019",
+         "position": {
+            "x": 1100,
+            "y": 1509,
+            "width": 100,
+            "height": 44
+         }
+      },
+      {
+         "text": "Teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0020",
+         "position": {
+            "x": 2629,
+            "y": 1745,
+            "width": 102,
+            "height": 44
+         }
+      },
+      {
+         "text": "Teater.",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0023",
+         "position": {
+            "x": 2192,
+            "y": 674,
+            "width": 110,
+            "height": 44
+         }
+      },
+      {
+         "text": "Teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0023",
+         "position": {
+            "x": 678,
+            "y": 748,
+            "width": 102,
+            "height": 44
+         }
+      },
+      {
+         "text": "TV/show/teater.",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0024",
+         "position": {
+            "x": 1046,
+            "y": 232,
+            "width": 255,
+            "height": 53
+         }
+      },
+      {
+         "text": "Teater).",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0024",
+         "position": {
+            "x": 2668,
+            "y": 230,
+            "width": 122,
+            "height": 53
+         }
+      },
+      {
+         "text": "teater-,",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0024",
+         "position": {
+            "x": 2148,
+            "y": 588,
+            "width": 119,
+            "height": 42
+         }
+      },
+      {
+         "text": "teater),",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0024",
+         "position": {
+            "x": 2484,
+            "y": 654,
+            "width": 118,
+            "height": 51
+         }
+      },
+      {
+         "text": "TEATER",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_0028",
+         "position": {
+            "x": 1335,
+            "y": 2057,
+            "width": 247,
+            "height": 36
+         }
+      },
+      {
+         "text": "teater,",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_I3",
+         "position": {
+            "x": 2510,
+            "y": 1314,
+            "width": 171,
+            "height": 50
+         }
+      },
+      {
+         "text": "Teater",
+         "pageId": "URN:NBN:no-nb_digibok_2014062707144_I3",
+         "position": {
+            "x": 437,
+            "y": 1526,
+            "width": 165,
+            "height": 45
+         }
+      }
+   ]
 }

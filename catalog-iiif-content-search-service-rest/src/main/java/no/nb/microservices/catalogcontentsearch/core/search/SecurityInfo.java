@@ -1,4 +1,4 @@
-package no.nb.microservices.catalogcontentsearch.core.search.service;
+package no.nb.microservices.catalogcontentsearch.core.search;
 
 public class SecurityInfo {
     private String xHost;

@@ -18,8 +18,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import no.nb.commons.web.util.UserUtils;
 import no.nb.microservices.catalogcontentsearch.core.index.repository.IndexRepository;
 import no.nb.microservices.catalogcontentsearch.core.index.service.IndexServiceImpl;
-import no.nb.microservices.catalogcontentsearch.core.search.service.SecurityInfo;
-import no.nb.microservices.catalogcontentsearch.core.search.service.TracableId;
+import no.nb.microservices.catalogcontentsearch.core.search.SecurityInfo;
+import no.nb.microservices.catalogcontentsearch.core.search.TracableId;
 
 @RunWith(MockitoJUnitRunner.class)
 public class IndexServiceImplTest {

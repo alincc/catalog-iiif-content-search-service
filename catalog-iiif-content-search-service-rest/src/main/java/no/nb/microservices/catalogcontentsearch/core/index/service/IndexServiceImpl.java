@@ -8,8 +8,8 @@ import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 
 import no.nb.microservices.catalogcontentsearch.core.index.repository.IndexRepository;
-import no.nb.microservices.catalogcontentsearch.core.search.service.SecurityInfo;
-import no.nb.microservices.catalogcontentsearch.core.search.service.TracableId;
+import no.nb.microservices.catalogcontentsearch.core.search.SecurityInfo;
+import no.nb.microservices.catalogcontentsearch.core.search.TracableId;
 import no.nb.microservices.catalogsearchindex.searchwithin.ContentSearchResource;
 
 @Service

@@ -1,6 +1,6 @@
 package no.nb.microservices.catalogcontentsearch.rest;
 
-import no.nb.microservices.catalogcontentsearch.core.search.service.ContentSearchResult;
+import no.nb.microservices.catalogcontentsearch.core.search.ContentSearchResult;
 import no.nb.microservices.catalogcontentsearch.rest.model.AnnotationList;
 import no.nb.microservices.catalogsearchindex.searchwithin.ContentSearchResource;
 
@@ -12,9 +12,7 @@ public class AnnotationListResourceAssembler {
         return new AnnotationListBuilder()
                 .withId(id)
                 .withQ(q)
-                .withStruct(result.getStruct())
                 .withFragments(contentSearchResult.getFragments())
-                .withFreetextMetadatas(contentSearchResult.getFreetextMetadatas())
                 .build();
     }
 

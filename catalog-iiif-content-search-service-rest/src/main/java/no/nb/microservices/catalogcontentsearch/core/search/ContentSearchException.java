@@ -1,4 +1,4 @@
-package no.nb.microservices.catalogcontentsearch.core.search.service;
+package no.nb.microservices.catalogcontentsearch.core.search;
 
 public class ContentSearchException extends RuntimeException {
     private static final long serialVersionUID = 1L;
